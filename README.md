@@ -17,13 +17,15 @@ Aprender e praticar:
 
 ### Passos
 
-####         1. Pesquisei os principais sites para compra de material escolar, e dentre eles escolhi 5:
+####         1. Pesquisei os principais sites para compra de material escolar, e dentre eles escolhi 7:
 
    - Americanas
    - Kalunga
    - Fnac
    - Saraiva
    - Amazon
+   - Caçula
+   - Prolar
 
 
 ####         2. E também os principais materiais, que são:
