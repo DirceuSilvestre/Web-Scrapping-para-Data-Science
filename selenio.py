@@ -1,4 +1,5 @@
 from time import sleep
+from numpy import product
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -34,7 +35,6 @@ drive.maximize_window()
 #escreve no input o nome do produto que deseja buscar
 #procura no HTML o primeiro botão que é um elemento button
 #e clica nele para que busque o termo escrito anteriormente
-#após aguardar o carregamento dos resultados fecha o navegador, encerrando o processo
 
 sleep(2)
 busca = drive.find_element_by_tag_name('input')
@@ -47,23 +47,29 @@ busca = drive.find_element_by_tag_name('button')
 
 busca.click()
 
+#Vai até a barra de "Ordenar por:" e clica nela
+#Seleciona para mostrar produtos a partir do menor preço
+
 menor_preco = drive.find_element_by_xpath("//form[@class='src__SortBar-sc-1oc11r-0 hEjDBT']")
 menor_preco.click()
 
 menor_preco = drive.find_element_by_xpath("//option[@value='lowerPrice']")
 menor_preco.click()
 
-produto = drive.find_element_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']")
+sleep(2)
 
-html_content = produto.get_attribute('outherHTML')
+#Obtem o nome do primero produto da lista
+#porem eu quero que procure todos os elementos listados na pagina
+
+produto = []
+for i in range(24):
+    produto = drive.find_elements_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']")
+    print(produto[i].text)
 
 
-soup = BeautifulSoup(html_content,'html.parser')
-table = soup.find(name=['table'])
 
-df_full = pd.read_html(str(table))[0].head(10)
 
-print(df_full)
+
 
 
 sleep(6)
