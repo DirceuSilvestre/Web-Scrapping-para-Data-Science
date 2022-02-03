@@ -58,14 +58,17 @@ menor_preco.click()
 
 sleep(2)
 
-#Obtem o nome do primero produto da lista
-#porem eu quero que procure todos os elementos listados na pagina
+#Obtem o nome de todos os produtos listados na página
 
 produto = []
+produto = drive.find_elements_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']")
+
 for i in range(24):
-    produto = drive.find_elements_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']")
     print(produto[i].text)
 
+#Falta só fazer o mesmo para o preço
+
+#Após é necessário encontrar a barra final e clicar para ir a próxima página
 
 
 
