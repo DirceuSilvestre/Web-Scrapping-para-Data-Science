@@ -41,7 +41,7 @@ busca = drive.find_element_by_tag_name('input')
 busca.click()
 
 
-busca.send_keys('lápis hb')
+busca.send_keys('lapis preto hb n2')
 
 busca = drive.find_element_by_tag_name('button')
 
@@ -63,14 +63,32 @@ sleep(2)
 produto = []
 produto = drive.find_elements_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']")
 
-for i in range(24):
+#for i in range(24):
+#    print(produto[i].text)
+
+preco = []
+preco = drive.find_elements_by_xpath("//span[@class='src__Text-sc-154pg0p-0 price__PromotionalPrice-sc-h6xgft-1 ctBJlj price-info__ListPriceWithMargin-sc-1xm1xzb-2 liXDNM']")
+
+#for i in range(24):
+#    print(preco[i].text)
+
+#Falta encontrar a barra final e clicar para ir a próxima página
+
+contador = 2
+while (contador < 4):
+    proximo = drive.find_elements_by_xpath("//button[@class='src__PageButton-sc-82ugau-3 fhogRv']")
+    proximo[contador].click()
+
+    produto.append(drive.find_elements_by_xpath("//h3[@class='product-name__Name-sc-1shovj0-0 gUjFDF']"))
+
+    preco.append(drive.find_elements_by_xpath("//span[@class='src__Text-sc-154pg0p-0 price__PromotionalPrice-sc-h6xgft-1 ctBJlj price-info__ListPriceWithMargin-sc-1xm1xzb-2 liXDNM']"))
+
+    contador+=1
+    
+
+numero = 3 * 24
+for i in range(numero):
     print(produto[i].text)
-
-#Falta só fazer o mesmo para o preço
-
-#Após é necessário encontrar a barra final e clicar para ir a próxima página
-
-
 
 
 
