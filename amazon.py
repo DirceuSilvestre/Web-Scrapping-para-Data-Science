@@ -6,10 +6,9 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Amazon
-produtos_buscados = ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb",
-                     "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["caderno 10", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
-# ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+# ["caderno 10", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
 # a data do dia em que esse código vai rodar
 data = datetime.today().date()
@@ -77,13 +76,13 @@ for produtos in range(len(produtos_buscados)):
     # se não conseguir achar espera, pois deve estar carregando a página, e tenta de novo
     try:
         maquina.find_element(
-            By.CSS_SELECTOR, 'select[id="s-result-sort-select"]').click()
+            By.CSS_SELECTOR, 'select[id="a-autoid-0-announce"]').click()
 
     except:
         maquina.implicitly_wait(10)
         try:
             maquina.find_element(
-                By.CSS_SELECTOR, 'select[id="s-result-sort-select"]').click()
+                By.CSS_SELECTOR, 'select[id="a-autoid-0-announce"]').click()
 
         except:
             WebDriverWait(maquina, timeout=2)
@@ -97,8 +96,13 @@ for produtos in range(len(produtos_buscados)):
     WebDriverWait(maquina, timeout=2)
 
     # ordena para iniciar nos menores preços
-    maquina.find_element(
-        By.CSS_SELECTOR, 'a[id="s-result-sort-select_1"]').click()
+    try:
+        maquina.find_element(
+            By.CSS_SELECTOR, 'a[id="s-result-sort-select_1"]').click()
+
+    except:
+        maquina.find_element(
+            By.CSS_SELECTOR, 'a[id="s-result-sort-select_1"]').click()
 
     # esperando o site carregar
 

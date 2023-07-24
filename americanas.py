@@ -6,8 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Americanas
-produtos_buscados = ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb",
-                     "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
@@ -159,7 +158,7 @@ for produtos in range(len(produtos_buscados)):
     preco_texto = []
 
     for elementos in range(len(lista_nomes_pagina_1)):
-        dentro = all(
+        '''dentro = all(
             string in lista_nomes_pagina_1[elementos].text for string in produtos_buscados[produtos].strip())
         if produtos != 1:
             if dentro:
@@ -167,10 +166,9 @@ for produtos in range(len(produtos_buscados)):
                 preco_texto.append(
                     (lista_precos_pagina_1[elementos].text)[-5:])
 
-        else:
-            produto_texto.append(lista_nomes_pagina_1[elementos].text)
-            preco_texto.append(
-                (lista_precos_pagina_1[elementos].text)[-5:])
+        else:'''
+        produto_texto.append(lista_nomes_pagina_1[elementos].text)
+        preco_texto.append((lista_precos_pagina_1[elementos].text)[-5:])
 
     dataframe['Produto'] = produto_texto
     dataframe['Preco'] = preco_texto
