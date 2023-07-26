@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Kalunga
-produtos_buscados = ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["mochila escolar"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
@@ -154,7 +154,7 @@ for produtos in range(len(produtos_buscados)):
     # precisamos imprimir so pra ver se foi tudo correto
     print(dataframe)
 
-    arquivo = "C:/Users/dirce/OneDrive/Documentos/Meus Projetos/Web-Scrapping-para-Data-Science/" + \
+    arquivo = "D:/Meus Documentos/Meus Projetos/Web-Scrapping-para-Data-Science/" + \
         produtos_buscados[produtos] + '.csv'
     existe = os.path.exists(arquivo)
 

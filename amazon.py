@@ -6,9 +6,9 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Amazon
-produtos_buscados = ["caderno 10", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["apontador"]
 
-# ["caderno 10", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
+# ["caderno 10 materias", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
 # a data do dia em que esse código vai rodar
 data = datetime.today().date()
@@ -193,7 +193,7 @@ for produtos in range(len(produtos_buscados)):
     print(dataframe)
 
     # colocamos o arquivo dentro de uma variavel para verificar se ele existe
-    arquivo = "C:/Users/dirce/OneDrive/Documentos/Meus Projetos/Web-Scrapping-para-Data-Science/" + \
+    arquivo = "D:/Meus Documentos/Meus Projetos/Web-Scrapping-para-Data-Science/" + \
         produtos_buscados[produtos] + '.csv'
     existe = os.path.exists(arquivo)
 
