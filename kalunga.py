@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Kalunga
-produtos_buscados = ["mochila escolar"]
+produtos_buscados = ["caneta bic azul"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
@@ -163,7 +163,7 @@ for produtos in range(len(produtos_buscados)):
     if existe == False:
         dataframe.to_csv(f"{produtos_buscados[produtos]}.csv", index=False)
     else:
-        dataframe_existente = pd.read_csv(arquivo)
+        dataframe_existente = pd.read_csv(arquivo) #, on_bad_lines='skip'
         dataframe_existente = pd.concat(
             [dataframe_existente, dataframe], axis=0, ignore_index=True)
         dataframe_existente.to_csv(
