@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Americanas
-produtos_buscados = ["regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
@@ -72,7 +72,7 @@ for produtos in range(len(produtos_buscados)):
 
     # faz a busca pelo elemento de ordenação dos produtos no site
     # se não conseguir achar espera, pois deve estar carregando a página, e tenta de novo
-    '''try:
+    try:
         maquina.find_element(
             By.CSS_SELECTOR, 'select[id="sort-by"]').click()
 
@@ -92,7 +92,7 @@ for produtos in range(len(produtos_buscados)):
 
     # ordena para iniciar nos menores preços
     maquina.find_element(
-        By.CSS_SELECTOR, 'option[value="lowerPriceRelevance"]').click()'''
+        By.CSS_SELECTOR, 'option[value="lowerPriceRelevance"]').click()
 
     WebDriverWait(maquina, timeout=2)
 
@@ -112,7 +112,7 @@ for produtos in range(len(produtos_buscados)):
     # essa parte do código clica em um link escrito ordenar por menores preços, é a segunda forma de ordenação
     # quase como uma confirmação de que quer somente os menores preços, e não menores preços com os mais relevantes
     # caso nao funcione o codigo espera um pouco para tentar novamente
-    '''try:
+    try:
         if produtos_buscados[produtos] != "mochila escolar":
             maquina.find_element(
                 By.LINK_TEXT, 'ordenar apenas por menores preços.').click()
@@ -122,7 +122,7 @@ for produtos in range(len(produtos_buscados)):
         if (produtos_buscados[produtos] != "mochila escolar") and (produtos_buscados[produtos] != "lapis de cor 12 cores"):
             maquina.implicitly_wait(100)
             maquina.find_element(
-                By.LINK_TEXT, 'ordenar apenas por menores preços.').click()'''
+                By.LINK_TEXT, 'ordenar apenas por menores preços.').click()
 
     WebDriverWait(maquina, timeout=2)
 
