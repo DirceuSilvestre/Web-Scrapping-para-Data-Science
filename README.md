@@ -18,7 +18,7 @@ Aprender e praticar:
 
 #### 1. Pesquisei os principais sites para compra de material escolar, e dentre eles escolhi 3:
 
-- Americanas
+- Americanas (eliminada pois o site esta impedindo o web scraping)
 - Kalunga
 - Amazon
 

@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Americanas
-produtos_buscados = ["regua 20cm", "tesoura sem ponta", "mochila escolar"]
+produtos_buscados = ["lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta bic azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
@@ -122,9 +122,9 @@ for produtos in range(len(produtos_buscados)):
         if (produtos_buscados[produtos] != "mochila escolar") and (produtos_buscados[produtos] != "lapis de cor 12 cores"):
             maquina.implicitly_wait(100)
             maquina.find_element(
-                By.LINK_TEXT, 'ordenar apenas por menores preços.').click()'''
+                By.LINK_TEXT, 'ordenar apenas por menores preços.').click()
 
-    WebDriverWait(maquina, timeout=2)
+    WebDriverWait(maquina, timeout=2)'''
 
     # coleta todos os nomes dos produtos
     lista_nomes_pagina_1 = maquina.find_elements(
