@@ -6,7 +6,7 @@ from datetime import datetime
 import pandas as pd
 
 # a lista de produtos que eu quero saber os preços no site da Amazon
-produtos_buscados = ["apontador"]
+produtos_buscados = ["caderno 10 materias"]
 
 # ["caderno 10 materias", "lapis de cor 12 cores", "caneta BIC azul", "lapis grafite hb", "estojo escolar", "borracha branca", "apontador", "regua 20cm", "tesoura sem ponta", "mochila escolar"]
 
