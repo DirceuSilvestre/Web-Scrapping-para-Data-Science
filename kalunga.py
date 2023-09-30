@@ -87,7 +87,7 @@ for produtos in range(len(produtos_buscados)):
                 By.ID, 'cboOrdenacao').click()
 
         except:
-            WebDriverWait(maquina, timeout=2)
+            WebDriverWait(maquina, timeout=20)
 
     # tenta mais uma vez, porque estava dando muito problema de não encontrar
     # e queremos ter a certeza que vai encontrar
